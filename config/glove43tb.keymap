@@ -74,7 +74,7 @@
         to_layer_0: to_layer_0 {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
-            bindings = <&to 3 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
+            bindings = <&to 7 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
         };
     };
@@ -109,10 +109,10 @@
 
         Mac {
             bindings = <
-&kp Q             &kp W             &kp E         &kp R                          &kp T                                                               &kp Y        &kp U  &lt 7 I    &kp O    &kp P
+&kp Q             &kp W             &kp E         &kp R                          &kp T                                                               &kp Y        &kp U  &lt 0 I    &kp O    &kp P
 &kp A             &kp S             &kp D         &kp F                          &kp G               &kp LS(LG(S))                    &kp MINUS      &kp H        &kp J  &kp K      &kp L    &kp ENTER
 &mt LEFT_SHIFT Z  &kp X             &kp C         &kp V                          &kp B               &kp COLON                        &kp SEMICOLON  &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
-&kp LEFT_SHIFT    &kp LEFT_CONTROL  &kp LEFT_ALT  &lt_to_layer_0 2 INT_MUHENKAN  &lt 4 LEFT_COMMAND  &lt_to_layer_0 5 INT_HENKAN      &kp BACKSPACE  &lt 4 SPACE                             &kp DEL
+&kp LEFT_SHIFT    &kp LEFT_CONTROL  &kp LEFT_ALT  &lt_to_layer_0 4 INT_MUHENKAN  &lt 2 LEFT_COMMAND  &lt_to_layer_0 3 INT_HENKAN      &kp BACKSPACE  &lt 2 SPACE                             &kp DEL
             >;
 
             sensor-bindings = <&mouse_wheel_scroll SCRL_DOWN SCRL_UP>;
@@ -120,36 +120,16 @@
 
         Windows {
             bindings = <
-&kp Q             &kp W             &kp E         &kp R                          &kp T                                                        &kp Y        &kp U  &lt 7 I    &kp O    &kp P
+&kp Q             &kp W             &kp E         &kp R                          &kp T                                                        &kp Y        &kp U  &lt 0 I    &kp O    &kp P
 &kp A             &kp S             &kp D         &kp F                          &kp G        &kp LS(LG(S))                    &kp MINUS      &kp H        &kp J  &kp K      &kp L    &kp ENTER
 &mt LEFT_SHIFT Z  &kp X             &kp C         &kp V                          &kp B        &kp COLON                        &kp SEMICOLON  &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
-&kp LEFT_SHIFT    &kp LEFT_CONTROL  &kp LEFT_ALT  &lt_to_layer_0 2 INT_MUHENKAN  &lt 4 LCTRL  &lt_to_layer_0 5 INT_HENKAN      &kp BACKSPACE  &lt 4 SPACE                             &kp DEL
+&kp LEFT_SHIFT    &kp LEFT_CONTROL  &kp LEFT_ALT  &lt_to_layer_0 4 INT_MUHENKAN  &lt 2 LCTRL  &lt_to_layer_0 3 INT_HENKAN      &kp BACKSPACE  &lt 2 SPACE                             &kp DEL
             >;
 
             sensor-bindings = <&mouse_wheel_scroll SCRL_DOWN SCRL_UP>;
         };
 
-        layer_6 {
-            bindings = <
-&trans  &trans        &trans        &trans        &trans                               &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&trans  &trans        &trans        &trans        &trans    &trans        &trans       &trans        &trans        &trans        &trans        &trans
-&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &ind_con  &ind_bat      &bootloader  &trans        &trans        &trans        &trans        &bt BT_CLR
-&trans  &trans        &trans        &trans        &trans    &trans        &trans       &trans                                                  &bt BT_CLR_ALL
-            >;
-        };
-
-        FUNCTION {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                       &kp F1  &kp F2  &kp F3  &kp F4  &kp F5
-&trans  &trans  &trans  &trans  &trans  &trans      &kp F13  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
-&trans  &trans  &trans  &trans  &trans  &trans      &trans   &trans  &trans  &trans  &trans  &kp F11
-&trans  &trans  &trans  &trans  &trans  &trans      &trans   &trans                          &kp F12
-            >;
-
-            sensor-bindings = <&sensor_rotate_kp C_VOLUME_DOWN C_VOLUME_UP>;
-        };
-
-        NUM {
+        NUM,SYM {
             bindings = <
 &kp MINUS                   &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp PLUS                                                   &kp CARET         &kp AMPERSAND      &kp TILDE       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
 &kp SLASH                   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp ASTERISK  &kp LC(LA(KP_NUMBER_0))      &kp UNDERSCORE  &kp EXCLAMATION   &kp AT_SIGN        &kp HASH        &kp DOLLAR            &kp PERCENT
@@ -183,6 +163,26 @@
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
             >;
+        };
+
+        SYSTEM {
+            bindings = <
+&trans  &trans        &trans        &trans        &trans                               &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&trans  &trans        &trans        &trans        &trans    &trans        &trans       &trans        &trans        &trans        &trans        &trans
+&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &ind_con  &ind_bat      &bootloader  &trans        &trans        &trans        &trans        &bt BT_CLR
+&trans  &trans        &trans        &trans        &trans    &trans        &trans       &trans                                                  &bt BT_CLR_ALL
+            >;
+        };
+
+        FUNCTION {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                       &kp F1  &kp F2  &kp F3  &kp F4  &kp F5
+&trans  &trans  &trans  &trans  &trans  &trans      &kp F13  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
+&trans  &trans  &trans  &trans  &trans  &trans      &trans   &trans  &trans  &trans  &trans  &kp F11
+&trans  &trans  &trans  &trans  &trans  &trans      &trans   &trans                          &kp F12
+            >;
+
+            sensor-bindings = <&sensor_rotate_kp C_VOLUME_DOWN C_VOLUME_UP>;
         };
     };
 };
