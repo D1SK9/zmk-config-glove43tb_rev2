@@ -1,6 +1,6 @@
 layout: {zmk_keyboard: glove43tb}
 layers:
-  mac:
+  Mac:
   - Q
   - W
   - E
