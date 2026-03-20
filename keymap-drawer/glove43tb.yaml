@@ -277,9 +277,9 @@ layers:
   - {t: BT, h: '4'}
   - {t: Mac, h: toggle}
   - {t: Windows, h: toggle}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {t: ARROW, h: toggle}
+  - {t: MOUSE, h: toggle}
+  - {t: SCROLL, h: toggle}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
