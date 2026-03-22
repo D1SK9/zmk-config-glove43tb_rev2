@@ -29,7 +29,9 @@
 };
 
 / {
+    // 全ての入力プロセッサをこの1つのブロックにまとめます
     input_processors {
+        // 1. ホイールの感度設定
         zip_wheel_scaler: zip_wheel_scaler {
             compatible = "zmk,input-processor-scaler";
             #input-processor-cells = <2>;
@@ -37,6 +39,24 @@
             codes = <INPUT_REL_WHEEL>;
             track-remainders;
         };
+
+        // 2. マウス移動をスクロールに変換する定義
+        zip_scroll_scaler: zip_scroll_scaler {
+            compatible = "zmk,input-processor-xy-to-scroll-scaler";
+            #input-processor-cells = <2>;
+            type = <INPUT_EV_REL>;
+            codes = <INPUT_REL_X>, <INPUT_REL_Y>;
+            track-remainders;
+        };
+    };
+
+    // トラックボールの挙動を管理する司令塔
+    trackball_listener {
+        compatible = "zmk,input-listener";
+        device = <&trackball>;
+        input-processors = 
+            <&zip_temp_layer 4 500>,   // 触ると自動でレイヤー4(MOUSE)へ
+            <&zip_scroll_scaler 5 20>;  // レイヤー5にいる間はスクロール化
     };
 };
 
