@@ -29,18 +29,15 @@
 };
 
 / {
-    // 全ての入力プロセッサをこの1つのブロックにまとめます
+    // 1. 使う機能の「定義」をまとめます
     input_processors {
-        // 1. ホイールの感度設定
-        zip_wheel_scaler: zip_wheel_scaler {
-            compatible = "zmk,input-processor-scaler";
+        // オートマウス（一時的なレイヤー切り替え）の定義
+        zip_temp_layer: zip_temp_layer {
+            compatible = "zmk,input-processor-temp-layer";
             #input-processor-cells = <2>;
-            type = <INPUT_EV_REL>;
-            codes = <INPUT_REL_WHEEL>;
-            track-remainders;
         };
 
-        // 2. マウス移動をスクロールに変換する定義
+        // マウス移動をスクロールに変換する定義
         zip_scroll_scaler: zip_scroll_scaler {
             compatible = "zmk,input-processor-xy-to-scroll-scaler";
             #input-processor-cells = <2>;
@@ -50,12 +47,12 @@
         };
     };
 
-    // トラックボールの挙動を管理する司令塔
+    // 2. トラックボールの動きを監視して、上の定義を呼び出します
     trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
         input-processors = 
-            <&zip_temp_layer 4 500>,   // 触ると自動でレイヤー4(MOUSE)へ
+            <&zip_temp_layer 4 500>,   // 触ると500msの間レイヤー4へ
             <&zip_scroll_scaler 5 20>;  // レイヤー5にいる間はスクロール化
     };
 };
