@@ -18,13 +18,23 @@
 };
 
 / {
-    // 【司令塔】右手だけに存在するトラックボールの挙動を指示します
     trackball_listener {
+        status = "okay";
         compatible = "zmk,input-listener";
-        device = <&trackball>; 
-        input-processors = 
-            <&zip_temp_layer 4 500>,   // 触ると自動でレイヤー4(MOUSE)へ
-            <&zip_scroll_scaler 5 20>;  // レイヤー5にいる間はスクロール化
+        device = <&trackball>;
+        
+        // 通常時：ボールを動かすとレイヤー4(MOUSE)へ (700ms)
+        input-processors = <&zip_temp_layer 4 700>;
+
+        // レイヤー5(SCROLL)が有効な時の挙動
+        scroller {
+            layers = <5>;
+            input-processors = <
+                &zip_xy_to_scroll_mapper
+                &zip_scroll_transform INPUT_TRANSFORM_X_INVERT
+                &zip_scroll_scaler 1 20 // 感度調整（1 20 くらいが使いやすいです）
+            >;
+        };
     };
 };
 
@@ -58,7 +68,8 @@
     cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;
 
     trackball: trackball@0 {
-        status = "okay";        compatible = "pixart,pmw3610";
+        status = "okay";
+        compatible = "pixart,pmw3610";
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
