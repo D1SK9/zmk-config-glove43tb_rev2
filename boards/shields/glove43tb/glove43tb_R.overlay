@@ -18,21 +18,22 @@
 };
 
 / {
+    // トラックボールの司令塔：右手だけにこの命令を出します
     trackball_listener {
         status = "okay";
         compatible = "zmk,input-listener";
         device = <&trackball>;
         
-        // 通常時：ボールを動かすとレイヤー4(MOUSE)へ (700ms)
+        // ボールを触るとレイヤー4(MOUSE)へ (700ms)
         input-processors = <&zip_temp_layer 4 700>;
 
-        // レイヤー5(SCROLL)が有効な時の挙動
+        // レイヤー5(SCROLL)がONの時にスクロール化
         scroller {
             layers = <5>;
             input-processors = <
                 &zip_xy_to_scroll_mapper
                 &zip_scroll_transform INPUT_TRANSFORM_X_INVERT
-                &zip_scroll_scaler 1 20 // 感度調整（1 20 くらいが使いやすいです）
+                &zip_scroll_scaler 1 16
             >;
         };
     };
