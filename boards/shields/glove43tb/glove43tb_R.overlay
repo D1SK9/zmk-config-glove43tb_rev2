@@ -8,30 +8,23 @@
 };
 
 &kscan0 {
-        col-gpios
-            = <&xiao_d 10 GPIO_ACTIVE_HIGH>
-            , <&xiao_d 9 GPIO_ACTIVE_HIGH>
-            , <&xiao_d 8 GPIO_ACTIVE_HIGH>
-            , <&xiao_d 7 GPIO_ACTIVE_HIGH>
-            , <&gpio0 10 GPIO_ACTIVE_HIGH>
-            ;
+    col-gpios
+        = <&xiao_d 10 GPIO_ACTIVE_HIGH>
+        , <&xiao_d 9 GPIO_ACTIVE_HIGH>
+        , <&xiao_d 8 GPIO_ACTIVE_HIGH>
+        , <&xiao_d 7 GPIO_ACTIVE_HIGH>
+        , <&gpio0 10 GPIO_ACTIVE_HIGH>
+        ;
 };
 
 / {
+    // 【司令塔】右手だけに存在するトラックボールの挙動を指示します
     trackball_listener {
-        status = "okay";
         compatible = "zmk,input-listener";
-        device = <&trackball>;
-        input-processors = <&zip_temp_layer 4 700>;            // オートマウスレイヤー（AML）: トラックボール動作時に自動的にレイヤー4を有効化（700ms）
-
-        scroller {
-            layers = <5>;                                      // スクロールレイヤー
-            input-processors = <
-                &zip_xy_to_scroll_mapper                       // XY移動でスクロール
-                &zip_scroll_transform INPUT_TRANSFORM_X_INVERT // スクロールのX軸を反転
-                &zip_scroll_scaler 1 16                        // スクロール感度調整
-            >;
-        };
+        device = <&trackball>; 
+        input-processors = 
+            <&zip_temp_layer 4 500>,   // 触ると自動でレイヤー4(MOUSE)へ
+            <&zip_scroll_scaler 5 20>;  // レイヤー5にいる間はスクロール化
     };
 };
 
@@ -65,16 +58,15 @@
     cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;
 
     trackball: trackball@0 {
-        status = "okay";
-        compatible = "pixart,pmw3610";
+        status = "okay";        compatible = "pixart,pmw3610";
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         evt-type = <INPUT_EV_REL>;
         x-input-code = <INPUT_REL_Y>;
         y-input-code = <INPUT_REL_X>;
-        invert-x;     // マウス操作のX軸を反転
-        invert-y;     // マウス操作のY軸を反転
-        cpi = <1200>;  // マウス感度
+        invert-x;
+        invert-y;
+        cpi = <1200>;
     };
 };
