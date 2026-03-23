@@ -29,31 +29,26 @@
 };
 
 / {
-    // 1. トラックボールの特殊な動き（オートマウス・スクロール）を定義します
     input_processors {
-        // オートマウス機能の定義
         zip_temp_layer: zip_temp_layer {
             compatible = "zmk,input-processor-temp-layer";
             #input-processor-cells = <2>;
         };
 
-        // ボールの動きをスクロールに変換する定義
         zip_scroll_scaler: zip_scroll_scaler {
             compatible = "zmk,input-processor-xy-to-scroll-scaler";
             #input-processor-cells = <2>;
-            type = <INPUT_EV_REL>;
-            codes = <INPUT_REL_X>, <INPUT_REL_Y>;
             track-remainders;
         };
     };
 
-    // 2. トラックボール本体と、上の定義を紐付けます
+    // 左右どちらのビルドでもエラーにならないように「vtrackball」を使用します
     trackball_listener {
         compatible = "zmk,input-listener";
-        device = <&trackball>; // ⭐ &vtrackball から &trackball に戻しました
+        device = <&vtrackball>; 
         input-processors = 
-            <&zip_temp_layer 4 500>,   // 触ると500msの間レイヤー4(MOUSE)へ
-            <&zip_scroll_scaler 5 20>;  // レイヤー5にいる間はスクロール化
+            <&zip_temp_layer 4 500>,
+            <&zip_scroll_scaler 5 20>;
     };
 };
 
