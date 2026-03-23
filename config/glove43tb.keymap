@@ -41,15 +41,6 @@
             track-remainders;
         };
     };
-
-    // 左右どちらのビルドでもエラーにならないように「vtrackball」を使用します
-    trackball_listener {
-        compatible = "zmk,input-listener";
-        device = <&vtrackball>; 
-        input-processors = 
-            <&zip_temp_layer 4 500>,
-            <&zip_scroll_scaler 5 20>;
-    };
 };
 
 / {
