@@ -29,15 +29,15 @@
 };
 
 / {
-    // 1. 使う機能の「定義」をまとめます
+    // 1. トラックボールの特殊な動き（オートマウス・スクロール）を定義します
     input_processors {
-        // オートマウス（一時的なレイヤー切り替え）の定義
+        // オートマウス機能の定義
         zip_temp_layer: zip_temp_layer {
             compatible = "zmk,input-processor-temp-layer";
             #input-processor-cells = <2>;
         };
 
-        // マウス移動をスクロールに変換する定義
+        // ボールの動きをスクロールに変換する定義
         zip_scroll_scaler: zip_scroll_scaler {
             compatible = "zmk,input-processor-xy-to-scroll-scaler";
             #input-processor-cells = <2>;
@@ -47,12 +47,12 @@
         };
     };
 
-    // 2. トラックボールの動きを監視して、上の定義を呼び出します
+    // 2. トラックボール本体と、上の定義を紐付けます
     trackball_listener {
         compatible = "zmk,input-listener";
-        device = <&trackball>;
+        device = <&trackball>; // ⭐ &vtrackball から &trackball に戻しました
         input-processors = 
-            <&zip_temp_layer 4 500>,   // 触ると500msの間レイヤー4へ
+            <&zip_temp_layer 4 500>,   // 触ると500msの間レイヤー4(MOUSE)へ
             <&zip_scroll_scaler 5 20>;  // レイヤー5にいる間はスクロール化
     };
 };
