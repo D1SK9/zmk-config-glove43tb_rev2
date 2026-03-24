@@ -277,8 +277,8 @@ layers:
   - {t: BT, h: '4'}
   - {t: Mac, h: toggle}
   - {t: Windows, h: toggle}
+  - {t: NUM_SYM, h: toggle}
   - {t: ARROW, h: toggle}
-  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
