@@ -39,10 +39,10 @@ layers:
   - LEFT CONTROL
   - LEFT ALT
   - {t: INT MUHENKAN, h: SYSTEM}
-  - {t: LEFT COMMAND, h: 'NUM,SYM'}
+  - {t: LEFT COMMAND, h: NUM_SYM}
   - {t: '&to_layer_0 INT_HENKAN', h: ARROW}
   - BACKSPACE
-  - {t: SPACE, h: 'NUM,SYM'}
+  - {t: SPACE, h: NUM_SYM}
   - DEL
   Windows:
   - Q
@@ -83,12 +83,12 @@ layers:
   - LEFT CONTROL
   - LEFT ALT
   - {t: INT MUHENKAN, h: SYSTEM}
-  - {t: LCTRL, h: 'NUM,SYM'}
+  - {t: LCTRL, h: NUM_SYM}
   - {t: '&to_layer_0 INT_HENKAN', h: ARROW}
   - BACKSPACE
-  - {t: SPACE, h: 'NUM,SYM'}
+  - {t: SPACE, h: NUM_SYM}
   - DEL
-  NUM,SYM:
+  NUM_SYM:
   - '-'
   - KP 7
   - KP 8
@@ -270,8 +270,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&mac_bt'
-  - '&win_bt'
+  - '&macro_mac'
+  - '&macro_win'
   - {t: BT, h: '2'}
   - {t: BT, h: '3'}
   - {t: BT, h: '4'}
