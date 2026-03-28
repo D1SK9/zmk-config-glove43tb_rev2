@@ -116,7 +116,7 @@
 &kp LEFT_SHIFT    &kp LEFT_CONTROL  &kp LEFT_ALT  &lt 6 LANG2  &lt 2 LEFT_COMMAND  &lt 3 LANGUAGE_1      &kp BACKSPACE  &lt 2 SPACE                             &kp DEL
             >;
 
-            sensor-bindings = <&mouse_wheel_scroll SCRL_DOWN SCRL_UP>;
+            sensor-bindings = <&inc_dec_kp K_VOLUME_UP K_VOLUME_DOWN>;
         };
 
         Windows {
