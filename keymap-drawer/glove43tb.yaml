@@ -38,7 +38,7 @@ layers:
   - LEFT SHIFT
   - LEFT CONTROL
   - LEFT ALT
-  - {t: Gui+LANG2, h: SYSTEM}
+  - {t: LANG2, h: SYSTEM}
   - {t: LEFT COMMAND, h: NUM_SYM}
   - {t: LANGUAGE 1, h: ARROW}
   - BACKSPACE
