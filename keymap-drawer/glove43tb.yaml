@@ -38,9 +38,9 @@ layers:
   - LEFT SHIFT
   - LEFT CONTROL
   - LEFT ALT
-  - {t: INT MUHENKAN, h: SYSTEM}
+  - {t: Gui+LANG2, h: SYSTEM}
   - {t: LEFT COMMAND, h: NUM_SYM}
-  - {t: INT HENKAN, h: ARROW}
+  - {t: LANGUAGE 1, h: ARROW}
   - BACKSPACE
   - {t: SPACE, h: NUM_SYM}
   - DEL
