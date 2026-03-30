@@ -40,9 +40,9 @@ layers:
   - LEFT ALT
   - {t: LANG2, h: SYSTEM}
   - LEFT COMMAND
-  - {t: LANGUAGE 1, h: ARROW}
+  - {t: LANGUAGE 1, h: NUM_SYM}
   - BACKSPACE
-  - {t: SPACE, h: NUM_SYM}
+  - {t: SPACE, h: ARROW}
   - DEL
   Windows:
   - Q
@@ -83,7 +83,7 @@ layers:
   - LEFT CONTROL
   - LEFT ALT
   - {t: INT MUHENKAN, h: SYSTEM}
-  - {t: LCTRL, h: NUM_SYM}
+  - LEFT CONTROL
   - {t: INT HENKAN, h: ARROW}
   - BACKSPACE
   - {t: SPACE, h: NUM_SYM}
@@ -128,9 +128,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   ARROW:
   - ESCAPE
@@ -172,9 +172,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {type: held}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   MOUSE:
   - {t: ▽, type: trans}
