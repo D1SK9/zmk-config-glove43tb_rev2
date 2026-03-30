@@ -42,7 +42,7 @@ layers:
   - LEFT COMMAND
   - {t: LANGUAGE 1, h: NUM_SYM}
   - BACKSPACE
-  - {t: SPACE, h: ARROW}
+  - {t: SPACE, h: Mac_ARROW}
   - DEL
   Windows:
   - Q
@@ -84,7 +84,7 @@ layers:
   - LEFT ALT
   - {t: INT MUHENKAN, h: SYSTEM}
   - LEFT CONTROL
-  - {t: INT HENKAN, h: ARROW}
+  - {t: INT HENKAN, h: Mac_ARROW}
   - BACKSPACE
   - {t: SPACE, h: NUM_SYM}
   - DEL
@@ -132,7 +132,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  ARROW:
+  Mac_ARROW:
   - ESCAPE
   - Ctl+Sft+TAB
   - Ctl+W
@@ -152,7 +152,7 @@ layers:
   - {t: ▽, type: trans}
   - HOME
   - LEFT
-  - DOWN
+  - Ctl+UP ARROW
   - RIGHT
   - PG DN
   - LSHFT
@@ -164,7 +164,7 @@ layers:
   - {t: ▽, type: trans}
   - END
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - DOWN ARROW
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -278,7 +278,7 @@ layers:
   - {t: Mac, h: toggle}
   - {t: Windows, h: toggle}
   - {t: NUM_SYM, h: toggle}
-  - {t: ARROW, h: toggle}
+  - {t: Mac_ARROW, h: toggle}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -352,6 +352,50 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - F12
+  Win_ARROW:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
 combos:
 - p: [11, 12]
   k: TAB
