@@ -39,7 +39,7 @@ layers:
   - LEFT CONTROL
   - LEFT ALT
   - {t: LANG2, h: SYSTEM}
-  - {t: LEFT COMMAND, h: NUM_SYM}
+  - LEFT COMMAND
   - {t: LANGUAGE 1, h: ARROW}
   - BACKSPACE
   - {t: SPACE, h: NUM_SYM}
@@ -127,10 +127,10 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {type: held}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   ARROW:
   - ESCAPE
