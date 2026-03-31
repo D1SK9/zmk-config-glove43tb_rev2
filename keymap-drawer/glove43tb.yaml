@@ -84,9 +84,9 @@ layers:
   - LEFT ALT
   - {t: INT MUHENKAN, h: SYSTEM}
   - LEFT CONTROL
-  - {t: INT HENKAN, h: Windows_ARROW}
+  - {t: INT HENKAN, h: NUM_SYM}
   - BACKSPACE
-  - {t: SPACE, h: NUM_SYM}
+  - {t: SPACE, h: Windows_ARROW}
   - DEL
   NUM_SYM:
   - '!'
@@ -392,9 +392,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {type: held}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
 combos:
 - p: [11, 12]
