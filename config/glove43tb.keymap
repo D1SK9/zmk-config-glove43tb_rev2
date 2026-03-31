@@ -127,7 +127,7 @@
 &kp LEFT_SHIFT    &kp LEFT_CONTROL  &kp LEFT_ALT  &lt 6 INT_MUHENKAN  &kp LEFT_CONTROL  &lt 3 INT_HENKAN      &kp BACKSPACE  &lt 2 SPACE                             &kp DEL
             >;
 
-            sensor-bindings = <&mouse_wheel_scroll SCRL_DOWN SCRL_UP>;
+            sensor-bindings = <&inc_dec_kp K_VOLUME_UP C_VOL_DN>;
         };
 
         NUM_SYM {
@@ -190,13 +190,13 @@
 
         Windows_ARROW {
             bindings = <
-&kp ESCAPE  &kp LC(LS(TAB))   &kp LC(W)  &kp LC(TAB)        &trans                      &trans    &trans    &kp UP            &trans     &kp PG_UP
-&trans      &trans            &trans     &trans             &trans  &trans      &trans  &kp HOME  &kp LEFT  &kp LC(UP_ARROW)  &kp RIGHT  &kp PG_DN
-&kp LSHFT   &kp LG(LS(LEFT))  &trans     &kp LG(LS(RIGHT))  &trans  &trans      &trans  &kp END   &trans    &kp DOWN_ARROW    &trans     &trans
-&trans      &trans            &trans     &trans             &trans  &trans      &trans  &trans                                           &trans
+&kp ESCAPE  &kp LC(LS(TAB))   &kp LC(W)  &kp LC(TAB)        &trans                      &trans    &trans    &kp UP          &trans     &kp PG_UP
+&trans      &trans            &trans     &trans             &trans  &trans      &trans  &kp HOME  &kp LEFT  &kp LG(TAB)     &kp RIGHT  &kp PG_DN
+&kp LSHFT   &kp LG(LS(LEFT))  &trans     &kp LG(LS(RIGHT))  &trans  &trans      &trans  &kp END   &trans    &kp DOWN_ARROW  &trans     &trans
+&trans      &trans            &trans     &trans             &trans  &trans      &trans  &trans                                         &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp LC(RIGHT) LC(LEFT)>;
+            sensor-bindings = <&inc_dec_kp LC(LG(RIGHT)) LC(RG(LEFT))>;
         };
     };
 };
