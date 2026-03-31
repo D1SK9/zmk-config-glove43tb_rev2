@@ -372,7 +372,7 @@ layers:
   - {t: ▽, type: trans}
   - HOME
   - LEFT
-  - Ctl+UP ARROW
+  - Gui+TAB
   - RIGHT
   - PG DN
   - LSHFT
