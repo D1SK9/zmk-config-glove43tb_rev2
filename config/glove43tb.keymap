@@ -73,7 +73,7 @@
 &kp LEFT_SHIFT    &kp LEFT_CONTROL  &kp LEFT_ALT  &lt 6 LANG2  &kp LEFT_COMMAND  &lt 2 LANGUAGE_1      &kp BACKSPACE  &lt 3 SPACE                             &kp DEL
             >;
 
-            sensor-bindings = <&inc_dec_kp K_VOLUME_UP K_VOLUME_DOWN>;
+            sensor-bindings = <&inc_dec_kp LA(LG(LC(RIGHT))) LA(LC(LG(LEFT)))>;
         };
 
         Windows {
@@ -98,10 +98,10 @@
 
         Mac_ARROW {
             bindings = <
-&kp ESCAPE  &kp LC(LS(TAB))   &kp LC(W)  &kp LC(TAB)        &trans                      &trans    &trans    &kp UP            &trans     &kp PG_UP
-&trans      &trans            &trans     &trans             &trans  &trans      &trans  &kp HOME  &kp LEFT  &kp LC(UP_ARROW)  &kp RIGHT  &kp PG_DN
-&kp LSHFT   &kp LG(LS(LEFT))  &trans     &kp LG(LS(RIGHT))  &trans  &trans      &trans  &kp END   &trans    &kp DOWN_ARROW    &trans     &trans
-&trans      &trans            &trans     &trans             &trans  &trans      &trans  &trans                                           &trans
+&kp ESCAPE  &kp LC(LS(TAB))   &kp LC(W)  &kp LC(TAB)        &trans                      &trans    &kp LC(LEFT)     &kp UP            &kp LC(RIGHT)  &kp PG_UP
+&trans      &trans            &trans     &trans             &trans  &trans      &trans  &kp HOME  &kp LEFT         &kp LC(UP_ARROW)  &kp RIGHT      &kp PG_DN
+&kp LSHFT   &kp LG(LS(LEFT))  &trans     &kp LG(LS(RIGHT))  &trans  &trans      &trans  &kp END   &kp LS(LC(TAB))  &kp DOWN_ARROW    &kp LC(TAB)    &trans
+&trans      &trans            &trans     &trans             &trans  &trans      &trans  &trans                                                      &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LC(RIGHT) LC(LEFT)>;
@@ -147,13 +147,13 @@
 
         Windows_ARROW {
             bindings = <
-&kp ESCAPE  &kp LC(LS(TAB))   &kp LC(W)  &kp LC(TAB)        &trans                      &trans    &trans    &kp UP          &trans     &kp PG_UP
-&trans      &trans            &trans     &trans             &trans  &trans      &trans  &kp HOME  &kp LEFT  &kp LG(TAB)     &kp RIGHT  &kp PG_DN
-&kp LSHFT   &kp LG(LS(LEFT))  &trans     &kp LG(LS(RIGHT))  &trans  &trans      &trans  &kp END   &trans    &kp DOWN_ARROW  &trans     &trans
-&trans      &trans            &trans     &trans             &trans  &trans      &trans  &trans                                         &trans
+&kp ESCAPE  &kp LC(LS(TAB))   &kp LC(W)  &kp LC(TAB)        &trans                      &trans    &kp LC(LG(LEFT))  &kp UP          &kp LC(LG(RIGHT))  &kp PG_UP
+&trans      &trans            &trans     &trans             &trans  &trans      &trans  &kp HOME  &kp LEFT          &kp LG(TAB)     &kp RIGHT          &kp PG_DN
+&kp LSHFT   &kp LG(LS(LEFT))  &trans     &kp LG(LS(RIGHT))  &trans  &trans      &trans  &kp END   &trans            &kp DOWN_ARROW  &trans             &trans
+&trans      &trans            &trans     &trans             &trans  &trans      &trans  &trans                                                         &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp LC(LG(RIGHT)) LC(LG(LEFT))>;
+            sensor-bindings = <&inc_dec_kp LG(LS(RIGHT)) LG(LS(LEFT))>;
         };
     };
 };
