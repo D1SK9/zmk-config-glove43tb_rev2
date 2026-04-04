@@ -149,7 +149,7 @@
             bindings = <
 &kp ESCAPE  &kp LC(LS(TAB))   &kp LC(W)  &kp LC(TAB)        &trans                      &trans    &kp LC(LG(LEFT))  &kp UP          &kp LC(LG(RIGHT))  &kp PG_UP
 &trans      &trans            &trans     &trans             &trans  &trans      &trans  &kp HOME  &kp LEFT          &kp LG(TAB)     &kp RIGHT          &kp PG_DN
-&kp LSHFT   &kp LG(LS(LEFT))  &trans     &kp LG(LS(RIGHT))  &trans  &trans      &trans  &kp END   &trans            &kp DOWN_ARROW  &trans             &trans
+&kp LSHFT   &kp LG(LS(LEFT))  &trans     &kp LG(LS(RIGHT))  &trans  &trans      &trans  &kp END   &kp LC(LS(TAB))   &kp DOWN_ARROW  &kp LC(TAB)        &trans
 &trans      &trans            &trans     &trans             &trans  &trans      &trans  &trans                                                         &trans
             >;
 
