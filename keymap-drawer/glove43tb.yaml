@@ -383,9 +383,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - END
-  - {t: ▽, type: trans}
+  - Ctl+Sft+TAB
   - DOWN ARROW
-  - {t: ▽, type: trans}
+  - Ctl+TAB
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
