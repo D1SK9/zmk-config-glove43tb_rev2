@@ -155,5 +155,16 @@
 
             sensor-bindings = <&inc_dec_kp LG(LS(RIGHT)) LG(LS(LEFT))>;
         };
+
+        Work_Windows {
+            bindings = <
+&kp Q             &kp W             &kp E         &kp R               &kp T                                                  &kp Y        &kp U  &kt I      &kp O    &kp P
+&kp A             &kp S             &kp D         &kp F               &kp G             &kp LS(LG(S))         &kp MINUS      &kp H        &kp J  &kp K      &kp L    &kp ENTER
+&mt LEFT_SHIFT Z  &kp X             &kp C         &kp V               &kp B             &kp COLON             &kp SEMICOLON  &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
+&kp LEFT_SHIFT    &kp LEFT_CONTROL  &kp LEFT_ALT  &lt 6 INT_MUHENKAN  &kp LEFT_CONTROL  &lt 2 INT_HENKAN      &kp BACKSPACE  &lt 8 SPACE                             &kp DEL
+            >;
+
+            sensor-bindings = <&inc_dec_kp LG(LS(RIGHT)) LG(LS(LEFT))>;
+        };
     };
 };
