@@ -1,7 +1,7 @@
 layout: {zmk_keyboard: glove43tb}
 layers:
   My_Mac:
-  - Q
+  - {t: Q, h: TAB}
   - W
   - E
   - R
@@ -45,7 +45,7 @@ layers:
   - {t: SPACE, h: Mac_ARROW}
   - DEL
   My_Windows:
-  - Q
+  - {t: Q, h: TAB}
   - W
   - E
   - R
@@ -124,8 +124,8 @@ layers:
   - KP 3
   - KP MINUS
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - ':'
+  - ;
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {type: held}
@@ -397,7 +397,7 @@ layers:
   - {type: held}
   - {t: ▽, type: trans}
   Work_Windows:
-  - Q
+  - {t: Q, h: TAB}
   - W
   - E
   - R
