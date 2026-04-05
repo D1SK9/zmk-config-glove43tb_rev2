@@ -147,7 +147,7 @@ layers:
   - Ctl+Sft+TAB
   - Gui+T
   - Ctl+TAB
-  - {t: ▽, type: trans}
+  - Gui+R
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - HOME
@@ -367,7 +367,7 @@ layers:
   - Ctl+Sft+TAB
   - Ctl+T
   - Ctl+TAB
-  - {t: ▽, type: trans}
+  - Ctl+R
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - HOME
