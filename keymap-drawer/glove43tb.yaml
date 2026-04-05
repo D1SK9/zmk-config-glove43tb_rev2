@@ -134,9 +134,9 @@ layers:
   - {t: ▽, type: trans}
   Mac_ARROW:
   - ESCAPE
-  - Ctl+Sft+TAB
-  - Ctl+W
-  - Ctl+TAB
+  - {t: ▽, type: trans}
+  - Sft+Gui+T
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - Ctl+LEFT
@@ -144,9 +144,9 @@ layers:
   - Ctl+RIGHT
   - PG UP
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - Ctl+Sft+TAB
+  - Gui+T
+  - Ctl+TAB
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -156,16 +156,16 @@ layers:
   - RIGHT
   - PG DN
   - LSHFT
-  - Gui+Sft+LEFT
   - {t: ▽, type: trans}
-  - Gui+Sft+RIGHT
+  - Gui+W
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - END
-  - Sft+Ctl+TAB
+  - {t: ▽, type: trans}
   - DOWN ARROW
-  - Ctl+TAB
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -354,9 +354,9 @@ layers:
   - F12
   Windows_ARROW:
   - ESCAPE
-  - Ctl+Sft+TAB
-  - Ctl+W
-  - Ctl+TAB
+  - {t: ▽, type: trans}
+  - Ctl+Sft+T
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - Ctl+Gui+LEFT
@@ -364,9 +364,9 @@ layers:
   - Ctl+Gui+RIGHT
   - PG UP
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - Ctl+Sft+TAB
+  - Ctl+T
+  - Ctl+TAB
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -376,9 +376,9 @@ layers:
   - RIGHT
   - PG DN
   - LSHFT
-  - Gui+Sft+LEFT
   - {t: ▽, type: trans}
-  - Gui+Sft+RIGHT
+  - Ctl+W
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
