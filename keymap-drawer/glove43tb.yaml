@@ -279,7 +279,7 @@ layers:
   - {t: My_Windows, h: toggle}
   - {t: NUM_SYM, h: toggle}
   - {t: Mac_ARROW, h: toggle}
-  - {t: ▽, type: trans}
+  - {t: Work_Windows, h: toggle}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -424,7 +424,7 @@ layers:
   - C
   - V
   - B
-  - ':'
+  - '&macro_gemini'
   - ;
   - N
   - M
