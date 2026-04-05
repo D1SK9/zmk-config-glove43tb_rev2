@@ -396,3 +396,47 @@ layers:
   - {t: ▽, type: trans}
   - {type: held}
   - {t: ▽, type: trans}
+  Work_Windows:
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - {t: I, h: toggle}
+  - O
+  - P
+  - A
+  - S
+  - D
+  - F
+  - G
+  - Sft+Gui+S
+  - '-'
+  - H
+  - J
+  - K
+  - L
+  - ENTER
+  - {t: Z, h: LEFT SHIFT}
+  - X
+  - C
+  - V
+  - B
+  - ':'
+  - ;
+  - N
+  - M
+  - ','
+  - .
+  - /
+  - LEFT SHIFT
+  - LEFT CONTROL
+  - LEFT ALT
+  - {t: INT MUHENKAN, h: SYSTEM}
+  - LEFT CONTROL
+  - {t: INT HENKAN, h: NUM_SYM}
+  - BACKSPACE
+  - {t: SPACE, h: Windows_ARROW}
+  - DEL
