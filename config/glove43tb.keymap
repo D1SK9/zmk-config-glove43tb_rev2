@@ -45,17 +45,24 @@
             bindings = <&to 1 &out OUT_BLE &bt BT_SEL 1>;
         };
 
+        macro_work: macro_work {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            // 職場レイヤー(9)へ移動 ＋ 出力をBluetoothに ＋ 3番目の接続先を選択
+            bindings = <&to 9 &out OUT_BLE &bt BT_SEL 2>;
+        };
+
         macro_gemini: new_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LC(L) &kp H &kp T &kp T &kp P &kp S &kp COLON &kp FSLH &kp FSLH &kp G &kp E &kp M &kp I &kp N &kp I &kp DOT &kp G &kp O &kp O &kp G &kp L &kp E &kp DOT &kp C &kp O &kp M &kp FSLH &kp A &kp P &kp P &kp QMARK &kp H &kp L &kp EQUAL &kp J &kp A &kp ENTER>;
+            bindings = <&kp LC(L) &kp G &kp E &kp M &kp I &kp N &kp I &kp DOT &kp G &kp O &kp O &kp G &kp L &kp E &kp DOT &kp C &kp O &kp M &kp ENTER>;
             label = "NEW_MACRO";
         };
 
         macro_NotebookLM: new_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LC(L) &kp H &kp T &kp T &kp P &kp S &kp COLON &kp FSLH &kp FSLH &kp N &kp O &kp T &kp E &kp B &kp O &kp O &kp K &kp L &kp M &kp DOT &kp G &kp O &kp O &kp G &kp L &kp E &kp DOT &kp C &kp O &kp M &kp FSLH &kp ENTER>;
+            bindings = <&kp LC(L) &kp N &kp O &kp T &kp E &kp B &kp O &kp O &kp K &kp L &kp M &kp DOT &kp G &kp O &kp O &kp G &kp L &kp E &kp DOT &kp C &kp O &kp M &kp ENTER>;
             label = "NEW_MACRO";
         };
     };
