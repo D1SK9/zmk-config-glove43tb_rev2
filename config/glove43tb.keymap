@@ -51,6 +51,13 @@
             bindings = <&kp LC(L) &kp H &kp T &kp T &kp P &kp S &kp COLON &kp FSLH &kp FSLH &kp G &kp E &kp M &kp I &kp N &kp I &kp DOT &kp G &kp O &kp O &kp G &kp L &kp E &kp DOT &kp C &kp O &kp M &kp FSLH &kp A &kp P &kp P &kp QMARK &kp H &kp L &kp EQUAL &kp J &kp A &kp ENTER>;
             label = "NEW_MACRO";
         };
+
+        macro_NotebookLM: new_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(L) &kp H &kp T &kp T &kp P &kp S &kp COLON &kp FSLH &kp FSLH &kp N &kp O &kp T &kp E &kp B &kp O &kp O &kp K &kp L &kp M &kp DOT &kp G &kp O &kp O &kp G &kp L &kp E &kp DOT &kp C &kp O &kp M &kp FSLH &kp ENTER>;
+            label = "NEW_MACRO";
+        };
     };
 
     behaviors {
