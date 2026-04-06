@@ -52,14 +52,14 @@
             bindings = <&to 9 &out OUT_BLE &bt BT_SEL 2>;
         };
 
-        macro_gemini: new_macro {
+        macro_gemini: macro_gemini {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LC(L) &kp G &kp E &kp M &kp I &kp N &kp I &kp DOT &kp G &kp O &kp O &kp G &kp L &kp E &kp DOT &kp C &kp O &kp M &kp ENTER>;
             label = "NEW_MACRO";
         };
 
-        macro_NotebookLM: new_macro {
+        macro_NotebookLM: macro_NotebookLM {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LC(L) &kp N &kp O &kp T &kp E &kp B &kp O &kp O &kp K &kp L &kp M &kp DOT &kp G &kp O &kp O &kp G &kp L &kp E &kp DOT &kp C &kp O &kp M &kp ENTER>;
