@@ -272,7 +272,7 @@ layers:
   - {t: ▽, type: trans}
   - '&macro_mac'
   - '&macro_win'
-  - {t: BT, h: '2'}
+  - '&macro_work'
   - {t: BT, h: '3'}
   - {t: BT, h: '4'}
   - {t: My_Mac, h: toggle}
