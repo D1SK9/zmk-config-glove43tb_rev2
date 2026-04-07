@@ -134,9 +134,9 @@ layers:
   - {t: ▽, type: trans}
   Mac_ARROW:
   - ESCAPE
-  - {t: ▽, type: trans}
+  - Gui+[
   - Sft+Gui+T
-  - {t: ▽, type: trans}
+  - Gui+]
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - Ctl+LEFT
@@ -354,9 +354,9 @@ layers:
   - F12
   Windows_ARROW:
   - ESCAPE
-  - {t: ▽, type: trans}
+  - Alt+LEFT
   - Ctl+Sft+T
-  - {t: ▽, type: trans}
+  - Alt+RIGHT
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - Ctl+Gui+LEFT
