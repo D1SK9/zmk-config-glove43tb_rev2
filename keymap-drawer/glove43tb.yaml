@@ -52,7 +52,7 @@ layers:
   - T
   - Y
   - U
-  - {t: I, h: toggle}
+  - I
   - O
   - P
   - A
