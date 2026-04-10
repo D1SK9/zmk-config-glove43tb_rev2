@@ -10,7 +10,7 @@ layers:
   - U
   - I
   - O
-  - {t: P, h: MOUSE}
+  - P
   - A
   - S
   - D
@@ -35,7 +35,7 @@ layers:
   - ','
   - .
   - /
-  - LEFT SHIFT
+  - {t: MOUSE, h: toggle}
   - LEFT CONTROL
   - LEFT ALT
   - {t: LANG2, h: SYSTEM}
@@ -54,7 +54,7 @@ layers:
   - U
   - I
   - O
-  - {t: P, h: MOUSE}
+  - P
   - A
   - S
   - D
@@ -79,7 +79,7 @@ layers:
   - ','
   - .
   - /
-  - LEFT SHIFT
+  - {t: MOUSE, h: toggle}
   - LEFT CONTROL
   - LEFT ALT
   - {t: INT MUHENKAN, h: SYSTEM}
@@ -186,7 +186,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: MOUSE, h: toggle}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -199,10 +199,10 @@ layers:
   - '&mkp MB3'
   - '&mkp MB2'
   - {t: ▽, type: trans}
-  - UNDO
-  - CUT
-  - COPY
-  - PASTE
+  - Gui+Z
+  - Gui+X
+  - Gui+C
+  - Gui+V
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -211,7 +211,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {t: MOUSE, h: toggle}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -406,7 +406,7 @@ layers:
   - U
   - I
   - O
-  - {t: P, h: MOUSE}
+  - P
   - A
   - S
   - D
@@ -431,7 +431,7 @@ layers:
   - ','
   - .
   - /
-  - LEFT SHIFT
+  - {t: MOUSE, h: toggle}
   - LEFT CONTROL
   - LEFT ALT
   - {t: INT MUHENKAN, h: SYSTEM}
@@ -440,3 +440,50 @@ layers:
   - BACKSPACE
   - {t: SPACE, h: Windows_ARROW}
   - DEL
+  MOUSE_WIN:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Ctl+Z
+  - Ctl+X
+  - Ctl+C
+  - Ctl+V
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: MOUSE, h: toggle}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+combos:
+- p: [8, 9]
+  k: {t: MOUSE, h: toggle}
