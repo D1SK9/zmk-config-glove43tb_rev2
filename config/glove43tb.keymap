@@ -30,7 +30,6 @@
 };
 
 / {
-    // 【条件付きレイヤー】Windows系レイヤー(1 or 9)とマウス(4)が重なると、Win用マウス(10)を自動発動
     conditional_layers {
         compatible = "zmk,conditional-layers";
         
@@ -47,7 +46,7 @@
 
     combos { 
         compatible = "zmk,combos"; 
-        // O+P同時押しも予備として残しておきます（不要なら無視してOK）
+        
         combo_mouse_lock {
             timeout-ms = <50>;
             key-positions = <8 9>; 
@@ -146,7 +145,7 @@
             sensor-bindings = <&inc_dec_kp LC(RIGHT) LC(LEFT)>;
         };
 
-        MOUSE { // Layer 4 (Mac用コピペ)
+        MOUSE { 
             bindings = <
 &trans     &trans     &trans     &trans     &trans                      &trans  &trans    &trans    &trans    &trans
 &trans     &trans     &trans     &trans     &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
@@ -190,7 +189,7 @@
 &kp LSHFT   &trans           &kp LC(W)      &trans         &trans     &trans      &trans  &kp END   &kp LC(LS(TAB))   &kp DOWN_ARROW  &kp LC(TAB)        &trans
 &trans      &trans           &trans         &trans         &trans     &trans      &trans  &trans                                                         &trans
             >;
-            sensor-bindings = <&inc_dec_kp LG(LS(RIGHT)) LG(LS(LEFT))>;
+            sensor-bindings = <&inc_dec_kp LG(LS(LEFT)) LG(LS(RIGHT))>;
         };
 
         Work_Windows {
@@ -203,17 +202,7 @@
             sensor-bindings = <&inc_dec_kp LG(LS(RIGHT)) LG(LS(LEFT))>;
         };
 
-        MOUSE_WIN { // Layer 10 (Windows用コピペ)
-            bindings = <
-&trans     &trans     &trans     &trans     &trans                      &trans  &trans  &trans  &trans  &trans
-&trans     &trans     &trans     &trans     &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&tog 4     &trans     &trans     &trans     &trans  &trans      &trans  &trans                          &trans
-            >;
-        };
-    };
-};
-10 (Windows用コピペ)
+        MOUSE_WIN { 
             bindings = <
 &trans     &trans     &trans     &trans     &trans                      &trans  &trans  &trans  &trans  &trans
 &trans     &trans     &trans     &trans     &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
