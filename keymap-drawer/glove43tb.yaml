@@ -10,7 +10,7 @@ layers:
   - U
   - I
   - O
-  - P
+  - {t: P, h: MOUSE}
   - A
   - S
   - D
@@ -54,7 +54,7 @@ layers:
   - U
   - I
   - O
-  - P
+  - {t: P, h: MOUSE}
   - A
   - S
   - D
@@ -186,7 +186,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {t: MOUSE, h: toggle}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -404,9 +404,9 @@ layers:
   - T
   - Y
   - U
-  - {t: I, h: toggle}
+  - I
   - O
-  - P
+  - {t: P, h: MOUSE}
   - A
   - S
   - D
