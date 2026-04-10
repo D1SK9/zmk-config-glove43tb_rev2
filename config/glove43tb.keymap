@@ -213,3 +213,13 @@
         };
     };
 };
+10 (Windows用コピペ)
+            bindings = <
+&trans     &trans     &trans     &trans     &trans                      &trans  &trans  &trans  &trans  &trans
+&trans     &trans     &trans     &trans     &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&tog 4     &trans     &trans     &trans     &trans  &trans      &trans  &trans                          &trans
+            >;
+        };
+    };
+};
