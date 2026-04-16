@@ -94,23 +94,23 @@ layers:
   - '#'
   - $
   - '%'
-  - KP PLUS
-  - KP 7
-  - KP 8
-  - KP 9
-  - KP MULTIPLY
+  - +
+  - '7'
+  - '8'
+  - '9'
+  - '*'
   - ^
   - '&'
   - '*'
   - (
   - )
   - {t: ▽, type: trans}
-  - KP EQUAL
-  - KP 0
-  - KP 4
-  - KP 5
-  - KP 6
-  - KP DIVIDE
+  - '='
+  - '0'
+  - '4'
+  - '5'
+  - '6'
+  - /
   - '~'
   - '`'
   - '['
@@ -118,11 +118,11 @@ layers:
   - \
   - '|'
   - {t: ▽, type: trans}
-  - KP DOT
-  - KP 1
-  - KP 2
-  - KP 3
-  - KP MINUS
+  - .
+  - '1'
+  - '2'
+  - '3'
+  - '-'
   - {t: ▽, type: trans}
   - ':'
   - ;
