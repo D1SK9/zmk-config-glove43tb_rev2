@@ -41,7 +41,7 @@ layers:
   - {t: LANG2, h: SYSTEM}
   - LEFT COMMAND
   - {t: LANGUAGE 1, h: NUM_SYM}
-  - BACKSPACE
+  - {t: BACKSPACE, h: Alt+BACKSPACE}
   - {t: SPACE, h: Mac_ARROW}
   - DEL
   My_Windows:
@@ -85,7 +85,7 @@ layers:
   - {t: INT MUHENKAN, h: SYSTEM}
   - LEFT CONTROL
   - {t: INT HENKAN, h: NUM_SYM}
-  - BACKSPACE
+  - {t: BACKSPACE, h: Ctl+BACKSPACE}
   - {t: SPACE, h: Windows_ARROW}
   - DEL
   NUM_SYM:
@@ -437,7 +437,7 @@ layers:
   - {t: INT MUHENKAN, h: SYSTEM}
   - LEFT CONTROL
   - {t: INT HENKAN, h: NUM_SYM}
-  - BACKSPACE
+  - {t: BACKSPACE, h: Ctl+BACKSPACE}
   - {t: SPACE, h: Windows_ARROW}
   - DEL
   MOUSE_WIN:
