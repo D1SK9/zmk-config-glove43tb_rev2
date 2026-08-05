@@ -267,9 +267,9 @@ layers:
   SYSTEM:
   - '&ind_bat'
   - '&ind_con'
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - FUNCTION
+  - OUT USB
+  - OUT BLE
   - '&macro_mac'
   - '&macro_win'
   - '&macro_win2'
@@ -311,7 +311,7 @@ layers:
   FUNCTION:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - F1
@@ -346,7 +346,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
