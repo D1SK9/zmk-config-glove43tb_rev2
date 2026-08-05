@@ -265,8 +265,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   SYSTEM:
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - '&ind_bat'
+  - '&ind_con'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
