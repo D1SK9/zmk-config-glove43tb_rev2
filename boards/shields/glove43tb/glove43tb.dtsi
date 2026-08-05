@@ -6,6 +6,14 @@
         zmk,physical-layout = &glove43tb_physical_layout;
     };
 
+    // XIAO BLE基板上のオンボードRGB LED(led0=Red/P0.26, led1=Blue/P0.30, led2=Green/P0.6)を
+    // zmk-rgbled-widgetが要求するled-red/led-green/led-blueエイリアスに割り当てる
+    aliases {
+        led-red = &led0;
+        led-green = &led2;
+        led-blue = &led1;
+    };
+
     glove43tb_physical_layout: glove43tb_physical_layout {
         compatible = "zmk,physical-layout";
         display-name = "Default";
