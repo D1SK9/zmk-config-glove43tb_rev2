@@ -48,7 +48,7 @@
         compatible = "zmk,combos";
 
         combo_mouse_lock {
-            timeout-ms = <50>;
+            timeout-ms = <150>;
             key-positions = <8 9>;
             bindings = <&tog 4>;
         };
