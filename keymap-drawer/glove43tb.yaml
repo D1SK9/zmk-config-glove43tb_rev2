@@ -12,16 +12,16 @@ layers:
   - O
   - P
   - A
-  - S
-  - D
-  - F
+  - {t: S, h: LEFT ALT}
+  - {t: D, h: LEFT CONTROL}
+  - {t: F, h: LSHFT}
   - G
   - Sft+Gui+S
   - '-'
   - H
-  - J
-  - K
-  - L
+  - {t: J, h: LSHFT}
+  - {t: K, h: LEFT CONTROL}
+  - {t: L, h: LEFT ALT}
   - ENTER
   - {t: Z, h: LEFT SHIFT}
   - X
@@ -56,16 +56,16 @@ layers:
   - O
   - P
   - A
-  - S
-  - D
-  - F
+  - {t: S, h: LEFT ALT}
+  - {t: D, h: LEFT CONTROL}
+  - {t: F, h: LSHFT}
   - G
   - Sft+Gui+S
   - '-'
   - H
-  - J
-  - K
-  - L
+  - {t: J, h: LSHFT}
+  - {t: K, h: LEFT CONTROL}
+  - {t: L, h: LEFT ALT}
   - ENTER
   - {t: Z, h: LEFT SHIFT}
   - X
