@@ -99,25 +99,20 @@
             label = "NEW_MACRO";
         };
 
-        // 自宅Windows用: Winキーでスタートメニュー検索→Windows Terminal起動→claude実行
+        // 自宅Windows用: Winキーでスタートメニュー検索→Claudeデスクトップアプリを起動
         macro_claude: macro_claude {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
                 <&kp LGUI>
               , <&macro_wait_time 400>
-              , <&kp W>
-              , <&kp T>
-              , <&macro_wait_time 30>
-              , <&kp ENTER>
-              , <&macro_wait_time 1000>
               , <&kp C>
-              , <&macro_wait_time 30>
               , <&kp L>
               , <&kp A>
               , <&kp U>
               , <&kp D>
               , <&kp E>
+              , <&macro_wait_time 30>
               , <&kp ENTER>
               ;
             label = "NEW_MACRO";
