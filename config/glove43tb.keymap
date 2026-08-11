@@ -10,6 +10,26 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
 
+// レイヤー番号の定義。
+// keymap ブロック内のレイヤーは「書かれている順」に 0 から番号が振られるので、
+// ここの数字と keymap 内の並び順は必ず一致させること。
+// 番号を直に書かず必ずこの名前を使うこと(並べ替え時の付け替えミスを防ぐため)。
+//
+// ※ boards/shields/glove43tb/glove43tb_R.overlay も L_MOUSE / L_SCROLL / L_SCROLL_WIN を
+//    数字で参照している。並べ替えたら overlay 側も必ず合わせること。
+#define L_MAC        0   // ベース: 自宅Mac
+#define L_WIN        1   // ベース: 自宅Windows
+#define L_WORK       2   // ベース: 職場Windows
+#define L_NUM_SYM    3   // 数字・記号
+#define L_MAC_ARROW  4   // 矢印・編集(Mac)
+#define L_WIN_ARROW  5   // 矢印・編集(Windows)
+#define L_MOUSE      6   // マウス(Mac基準)
+#define L_SCROLL     7   // スクロール(Mac基準)
+#define L_MOUSE_WIN  8   // マウス(Windows基準) ※L_WIN/L_WORK + L_MOUSE で自動
+#define L_SCROLL_WIN 9   // スクロール(Windows基準)
+#define L_SYSTEM     10  // システム・プロファイル切替
+#define L_FUNCTION   11  // ファンクションキー
+
 &mt {
     flavor = "balanced";
     quick-tap-ms = <0>;
@@ -33,14 +53,15 @@
     conditional_layers {
         compatible = "zmk,conditional-layers";
 
+        // Windows系ベースでマウスレイヤーに入ったら、Windows用マウスレイヤーへ自動で乗せる
         mouse_win_auto {
-            if-layers = <1 4>;
-            then-layer = <10>;
+            if-layers = <L_WIN L_MOUSE>;
+            then-layer = <L_MOUSE_WIN>;
         };
 
         mouse_work_win_auto {
-            if-layers = <9 4>;
-            then-layer = <10>;
+            if-layers = <L_WORK L_MOUSE>;
+            then-layer = <L_MOUSE_WIN>;
         };
     };
 
@@ -50,7 +71,7 @@
         combo_mouse_lock {
             timeout-ms = <150>;
             key-positions = <8 9>;
-            bindings = <&tog 4>;
+            bindings = <&tog L_MOUSE>;
         };
     };
 
@@ -58,31 +79,31 @@
         macro_mac: macro_mac {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 0 &out OUT_BLE &bt BT_SEL 0>;
+            bindings = <&to L_MAC &out OUT_BLE &bt BT_SEL 0>;
         };
 
         macro_win: macro_win {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 1 &out OUT_BLE &bt BT_SEL 1>;
+            bindings = <&to L_WIN &out OUT_BLE &bt BT_SEL 1>;
         };
 
         macro_win2: macro_win2 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 1 &out OUT_BLE &bt BT_SEL 2>;
+            bindings = <&to L_WIN &out OUT_BLE &bt BT_SEL 2>;
         };
 
         macro_win3: macro_win3 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 1 &out OUT_BLE &bt BT_SEL 3>;
+            bindings = <&to L_WIN &out OUT_BLE &bt BT_SEL 3>;
         };
 
         macro_work: macro_work {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 9 &out OUT_BLE &bt BT_SEL 4>;
+            bindings = <&to L_WORK &out OUT_BLE &bt BT_SEL 4>;
         };
 
         macro_gemini: macro_gemini {
@@ -149,30 +170,43 @@
     keymap {
         compatible = "zmk,keymap";
 
+        // ---- L0: ベース(自宅Mac) ----
         My_Mac {
             bindings = <
-&mt TAB Q         &kp W             &kp E         &kp R        &kp T                                                   &kp Y          &kp U        &kp I        &kp O    &kp P
-&kp A             &hm LEFT_ALT S    &hm LEFT_CONTROL D   &hm LSHFT F  &kp G             &kp LS(LG(S))          &kp MINUS      &kp H          &hm LSHFT J  &hm LEFT_CONTROL K  &hm LEFT_ALT L    &kp ENTER
-&mt LEFT_SHIFT Z  &kp X             &kp C         &kp V        &kp B             &kp LA(LC(LG(G)))      &kp LG(SPACE)  &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
-&tog 4            &kp LEFT_CONTROL  &kp LEFT_ALT  &lt 6 LANG2  &kp LEFT_COMMAND  &lt 2 LANGUAGE_1       &kp BACKSPACE  &lt 3 SPACE                             &kp DEL
+&mt TAB Q         &kp W             &kp E         &kp R                  &kp T                                                        &kp Y          &kp U        &kp I               &kp O            &kp P
+&kp A             &hm LEFT_ALT S    &hm LEFT_CONTROL D  &hm LSHFT F      &kp G                     &kp LS(LG(S))          &kp MINUS   &kp H          &hm LSHFT J  &hm LEFT_CONTROL K  &hm LEFT_ALT L   &kp ENTER
+&mt LEFT_SHIFT Z  &kp X             &kp C         &kp V                  &kp B                     &kp LA(LC(LG(G)))      &kp LG(SPACE)  &kp N       &kp M        &kp COMMA           &kp DOT          &kp SLASH
+&tog L_MOUSE      &kp LEFT_CONTROL  &kp LEFT_ALT  &lt L_SYSTEM LANG2     &kp LEFT_COMMAND          &lt L_NUM_SYM LANGUAGE_1  &kp BACKSPACE  &lt L_MAC_ARROW SPACE                                      &kp DEL
             >;
 
             sensor-bindings = <&inc_dec_kp LA(LG(LC(LEFT))) LA(LC(LG(RIGHT)))>;
         };
 
+        // ---- L1: ベース(自宅Windows) ----
         My_Windows {
             bindings = <
-&mt TAB Q         &kp W             &kp E         &kp R               &kp T                                                  &kp Y          &kp U        &kp I        &kp O    &kp P
-&kp A             &hm LEFT_ALT S    &hm LEFT_CONTROL D   &hm LSHFT F         &kp G             &kp LS(LG(S))         &kp MINUS      &kp H          &hm LSHFT J  &hm LEFT_CONTROL K  &hm LEFT_ALT L    &kp ENTER
-&mt LEFT_SHIFT Z  &kp X             &kp C         &kp V               &kp B             &kp LA(LC(G))         &kp LA(SPACE)  &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
-&tog 4            &kp LEFT_CONTROL  &kp LEFT_ALT  &lt 6 INT_MUHENKAN  &kp LEFT_CONTROL  &lt 2 INT_HENKAN      &kp BACKSPACE  &lt 8 SPACE                             &kp DEL
+&mt TAB Q         &kp W             &kp E         &kp R                       &kp T                                                       &kp Y          &kp U        &kp I               &kp O           &kp P
+&kp A             &hm LEFT_ALT S    &hm LEFT_CONTROL D  &hm LSHFT F           &kp G                    &kp LS(LG(S))         &kp MINUS    &kp H          &hm LSHFT J  &hm LEFT_CONTROL K  &hm LEFT_ALT L  &kp ENTER
+&mt LEFT_SHIFT Z  &kp X             &kp C         &kp V                       &kp B                    &kp LA(LC(G))         &kp LA(SPACE)  &kp N        &kp M        &kp COMMA           &kp DOT         &kp SLASH
+&tog L_MOUSE      &kp LEFT_CONTROL  &kp LEFT_ALT  &lt L_SYSTEM INT_MUHENKAN   &kp LEFT_CONTROL         &lt L_NUM_SYM INT_HENKAN  &kp BACKSPACE  &lt L_WIN_ARROW SPACE                                    &kp DEL
             >;
 
             sensor-bindings = <&inc_dec_kp LG(LS(RIGHT)) LG(LS(LEFT))>;
         };
 
-        // ★修正箇所：テンキー(KP_N)を全て普通の数字・記号キーに書き換えました
+        // ---- L2: ベース(職場Windows) ----
+        Work_Windows {
+            bindings = <
+&mt TAB Q         &kp W             &kp E         &kp R                       &kp T                                                          &kp Y        &kp U  &kp I      &kp O    &kp P
+&kp A             &kp S             &kp D         &kp F                       &kp G             &kp LS(LG(S))         &kp MINUS              &kp H        &kp J  &kp K      &kp L    &kp ENTER
+&mt LEFT_SHIFT Z  &kp X             &kp C         &kp V                       &kp B             &macro_gemini         &macro_NotebookLM      &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
+&tog L_MOUSE      &kp LEFT_CONTROL  &kp LEFT_ALT  &lt L_SYSTEM INT_MUHENKAN   &kp LEFT_CONTROL  &lt L_NUM_SYM INT_HENKAN  &kp BACKSPACE      &lt L_WIN_ARROW SPACE                   &kp DEL
+            >;
 
+            sensor-bindings = <&inc_dec_kp LG(LS(RIGHT)) LG(LS(LEFT))>;
+        };
+
+        // ---- L3: 数字・記号 ----
         NUM_SYM {
             bindings = <
 &kp EXCL   &kp AT     &kp HASH       &kp DLLR  &kp PRCNT                           &kp PLUS  &kp N7  &kp N8  &kp N9  &kp STAR
@@ -182,6 +216,7 @@
             >;
         };
 
+        // ---- L4: 矢印・編集(Mac) ----
         Mac_ARROW {
             bindings = <
 &kp ESCAPE  &kp LG(LEFT_BRACKET)  &kp LS(LG(T))  &kp LG(RIGHT_BRACKET)  &trans                         &trans    &kp LC(LEFT)  &kp UP            &kp LC(RIGHT)  &kp PG_UP
@@ -193,44 +228,7 @@
             sensor-bindings = <&inc_dec_kp LC(RIGHT) LC(LEFT)>;
         };
 
-        MOUSE {
-            bindings = <
-&trans     &trans     &trans     &trans     &trans                      &trans  &trans    &trans    &trans    &trans
-&trans     &trans     &trans     &trans     &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
-&kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &trans  &trans      &trans  &trans  &trans    &trans    &trans    &trans
-&tog 4     &trans     &trans     &trans     &trans  &mo 5       &trans  &trans                                &trans
-            >;
-        };
-
-        SCROLL {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
-            >;
-        };
-
-        SYSTEM {
-            bindings = <
-&ind_bat  &ind_con  &mo 7   &out OUT_USB  &out OUT_BLE           &macro_mac  &macro_win  &macro_win2  &macro_win3  &macro_work
-&to 0   &to 1   &to 2   &to 3   &to 9   &trans      &trans       &macro_claude  &trans      &trans       &trans       &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &bootloader  &trans      &trans      &trans       &trans       &bt BT_CLR
-&trans  &trans  &trans  &trans  &trans  &trans      &trans       &trans                                            &bt BT_CLR_ALL
-            >;
-        };
-
-        FUNCTION {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                       &kp F1  &kp F2  &kp F3  &kp F4  &kp F5
-&trans  &trans  &trans  &trans  &trans  &trans      &kp F13  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
-&trans  &trans  &trans  &trans  &trans  &trans      &trans   &trans  &trans  &trans  &trans  &kp F11
-&trans  &trans  &trans  &trans  &trans  &trans      &trans   &trans                          &kp F12
-            >;
-
-            sensor-bindings = <&sensor_rotate_kp C_VOLUME_DOWN C_VOLUME_UP>;
-        };
-
+        // ---- L5: 矢印・編集(Windows) ----
         Windows_ARROW {
             bindings = <
 &kp ESCAPE  &kp LA(LEFT)     &kp LC(LS(T))  &kp LA(RIGHT)  &trans                         &trans    &kp LC(LG(LEFT))  &kp UP          &kp LC(LG(RIGHT))  &kp PG_UP
@@ -242,24 +240,66 @@
             sensor-bindings = <&inc_dec_kp LG(LS(LEFT)) LG(LS(RIGHT))>;
         };
 
-        Work_Windows {
+        // ---- L6: マウス(Mac基準) ----
+        MOUSE {
             bindings = <
-&mt TAB Q         &kp W             &kp E         &kp R               &kp T                                                      &kp Y        &kp U  &kp I      &kp O    &kp P
-&kp A             &kp S             &kp D         &kp F               &kp G             &kp LS(LG(S))         &kp MINUS          &kp H        &kp J  &kp K      &kp L    &kp ENTER
-&mt LEFT_SHIFT Z  &kp X             &kp C         &kp V               &kp B             &macro_gemini         &macro_NotebookLM  &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
-&tog 4            &kp LEFT_CONTROL  &kp LEFT_ALT  &lt 6 INT_MUHENKAN  &kp LEFT_CONTROL  &lt 2 INT_HENKAN      &kp BACKSPACE      &lt 8 SPACE                             &kp DEL
+&trans        &trans     &trans     &trans     &trans                            &trans  &trans    &trans    &trans    &trans
+&trans        &trans     &trans     &trans     &trans  &trans            &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
+&kp LG(Z)     &kp LG(X)  &kp LG(C)  &kp LG(V)  &trans  &trans            &trans  &trans  &trans    &trans    &trans    &trans
+&tog L_MOUSE  &trans     &trans     &trans     &trans  &mo L_SCROLL      &trans  &trans                                &trans
             >;
-
-            sensor-bindings = <&inc_dec_kp LG(LS(RIGHT)) LG(LS(LEFT))>;
         };
 
+        // ---- L7: スクロール(Mac基準) ----
+        SCROLL {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+            >;
+        };
+
+        // ---- L8: マウス(Windows基準) ※L_WIN/L_WORK + L_MOUSE で自動 ----
         MOUSE_WIN {
             bindings = <
-&trans     &trans     &trans     &trans     &trans                      &trans  &trans  &trans  &trans  &trans
-&trans     &trans     &trans     &trans     &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&tog 4     &trans     &trans     &trans     &trans  &trans      &trans  &trans                          &trans
+&trans        &trans     &trans     &trans     &trans                                &trans  &trans  &trans  &trans  &trans
+&trans        &trans     &trans     &trans     &trans  &trans                &trans  &trans  &trans  &trans  &trans  &trans
+&kp LC(Z)     &kp LC(X)  &kp LC(C)  &kp LC(V)  &trans  &trans                &trans  &trans  &trans  &trans  &trans  &trans
+&tog L_MOUSE  &trans     &trans     &trans     &trans  &mo L_SCROLL_WIN      &trans  &trans                          &trans
             >;
+        };
+
+        // ---- L9: スクロール(Windows基準) ----
+        SCROLL_WIN {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+            >;
+        };
+
+        // ---- L10: システム・プロファイル切替 ----
+        SYSTEM {
+            bindings = <
+&ind_bat   &ind_con   &mo L_FUNCTION  &out OUT_USB      &out OUT_BLE                        &macro_mac     &macro_win  &macro_win2  &macro_win3  &macro_work
+&to L_MAC  &to L_WIN  &to L_NUM_SYM   &to L_MAC_ARROW   &to L_WORK    &trans      &trans     &macro_claude  &trans      &trans       &trans       &trans
+&trans     &trans     &trans          &trans            &trans        &trans      &bootloader  &trans       &trans      &trans       &trans       &bt BT_CLR
+&trans     &trans     &trans          &trans            &trans        &trans      &trans     &trans                                               &bt BT_CLR_ALL
+            >;
+        };
+
+        // ---- L11: ファンクションキー ----
+        FUNCTION {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                       &kp F1  &kp F2  &kp F3  &kp F4  &kp F5
+&trans  &trans  &trans  &trans  &trans  &trans      &kp F13  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
+&trans  &trans  &trans  &trans  &trans  &trans      &trans   &trans  &trans  &trans  &trans  &kp F11
+&trans  &trans  &trans  &trans  &trans  &trans      &trans   &trans                          &kp F12
+            >;
+
+            sensor-bindings = <&sensor_rotate_kp C_VOLUME_DOWN C_VOLUME_UP>;
         };
     };
 };

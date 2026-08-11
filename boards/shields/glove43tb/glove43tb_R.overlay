@@ -18,18 +18,32 @@
 };
 
 / {
+    // レイヤー番号は config/glove43tb.keymap の #define と対応している。
+    // キーマップ側でレイヤーを並べ替えたら、ここの数字も必ず合わせること。
+    //   6 = L_MOUSE / 7 = L_SCROLL / 9 = L_SCROLL_WIN
     trackball_listener {
         status = "okay";
         compatible = "zmk,input-listener";
         device = <&trackball>;
-        input-processors = <&zip_temp_layer 4 400>;            // オートマウスレイヤー（AML）: トラックボール動作時に自動的にレイヤー4を有効化（400ms）
+        input-processors = <&zip_temp_layer 6 400>;            // オートマウスレイヤー（AML）: トラックボール動作時に自動的にL_MOUSEを有効化（400ms）
 
+        // Mac基準。macOSはナチュラルスクロールONが前提なので縦は反転しない
         scroller {
-            layers = <5>;                                      // スクロールレイヤー
+            layers = <7>;                                      // L_SCROLL
             input-processors = <
                 &zip_xy_to_scroll_mapper                       // XY移動でスクロール
                 &zip_scroll_transform INPUT_TRANSFORM_X_INVERT // スクロールのX軸を反転
                 &zip_scroll_scaler 1 32                       // スクロール感度調整
+            >;
+        };
+
+        // Windows基準。ナチュラルスクロール相当の補正がOS側に無いぶん、縦も反転させる
+        scroller_win {
+            layers = <9>;                                      // L_SCROLL_WIN
+            input-processors = <
+                &zip_xy_to_scroll_mapper
+                &zip_scroll_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
+                &zip_scroll_scaler 1 32
             >;
         };
     };
